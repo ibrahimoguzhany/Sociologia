@@ -51,10 +51,17 @@
     <Compile Include="Entities\Note.cs" />
     <Compile Include="Entities\User.cs" />
     <Compile Include="Enums\DataStatus.cs" />
+    <Compile Include="Messages\ErrorMessageCode.cs" />
+    <Compile Include="Messages\ErrorMessageObj.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ValueObjects\LoginViewModel.cs" />
+    <Compile Include="ValueObjects\RegisterViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Images\user.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

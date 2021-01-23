@@ -1,6 +1,7 @@
 ﻿using Project.ENTITIES.Entities;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity.ModelConfiguration;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,9 @@ namespace Project.MAP.Options
     {
         public BaseMap()
         {
+            HasKey(x => x.ID);
+
+            Property(x => x.ID).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
             Property(x => x.ModifiedDate).HasColumnName("Veri Güncelleme Tarihi").HasColumnType("datetime2");
 
             Property(x => x.DeletedDate).HasColumnName("Veri Silme Tarihi").HasColumnType("datetime2");

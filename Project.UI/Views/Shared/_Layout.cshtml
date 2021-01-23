@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@using Project.ENTITIES
+
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -26,6 +28,7 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+
 </head>
 
 <body>
@@ -41,28 +44,107 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">My Note Project</a>
+                <a class="navbar-brand" href="/Home/Index"><span class="glyphicon glyphicon-queen"></span> Sociologia</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
+                    @if (CurrentSession.User != null)
+                    {
+                        <li class="dropdown">
+                            <a href="/Note/MyNotes" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                <span class="glyphicon glyphicon-wrench"></span> Yönetim <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    @Bootstrap.LinkMenu("/Note/Create", "plus", " Not Ekle")
+                                </li>
+                                <li role="separator" class="divider"></li>
+                                <li>
+                                    @Bootstrap.LinkMenu("/Note/Index", "th-list", " Notlarım")
+                                </li>
+                                <li>
+                                    @Bootstrap.LinkMenu("/Note/MyLikedNotes", "heart", " Beğendiklerim")
+                                </li>
+                                @if (CurrentSession.User.IsAdmin.Value)
+                                {
+                                    <li role="separator" class="divider"></li>
+                                    <li>
+                                        @Bootstrap.LinkMenu("/Category/Create", "plus", " Kategori Ekle")
+                                    </li>
+
+                                    <li>
+                                        @Bootstrap.LinkMenu("/Category/Index", "th-list", " Kategoriler")
+
+                                    </li>
+
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        @Bootstrap.LinkMenu("/User/Create", "plus", " Kullanıcı Ekle")
+
+                                    </li>
+
+                                    <li>
+                                        @Bootstrap.LinkMenu("/User/Index", "th-list", " Kullanıcılar")
+                                    </li>
+                                }
+                            </ul>
+                        </li>
+                    }
                     <li>
-                        <a href="#">
-                        <span class="glyphicon glyphicon-heart-empty"></span>En Beğenilenler
-                        </a>
+                        @Bootstrap.LinkMenu("/Home/MostLiked", "star", " En Beğenilenler")
+
                     </li>
                     <li>
-                        <a href="#">
-                        <span class="glyphicon glyphicon-th-list"></span>Son Yazılanlar
-                        </a>
+                        @Bootstrap.LinkMenu("/Home/Index", "th-list", " Son Yazılar")
+
                     </li>
                     <li>
-                        <a href="#">
-                        <span class="glyphicon glyphicon-info-sign"></span>About
-                        </a>
+                        @Bootstrap.LinkMenu("/Home/About", "info-sign", " Hakkımızda")
                     </li>
                 </ul>
-             
+                <ul class="nav navbar-right navbar-nav">
+                    @if (CurrentSession.User == null)
+                    {
+                        <li>
+                            @Bootstrap.LinkMenu("/Home/Login", "log-in", " Giriş")
+                        </li>
+                        <li>
+                            @Bootstrap.LinkMenu("/Home/Register", "user", " Üye Ol")
+
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="dropdown">
+                            <a href="/Home/ShowProfile" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                <span class="glyphicon glyphicon-user"></span> @CurrentSession.User.UserName <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    @Bootstrap.LinkMenu("/Home/ShowProfile", "user", " Profili Göster")
+
+                                </li>
+                                <li>
+                                    @Bootstrap.LinkMenu("/Home/EditProfile", "edit", " Profili Düzenle")
+
+                                </li>
+
+                                <li>
+                                    <a href="/Home/DeleteProfile" onclick="return confirm('Hesabinizi silmek istediginize emin misiniz?');"><span class="glyphicon glyphicon-trash"></span> Profili Sil</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            @Bootstrap.LinkMenu("/Home/Logout", "log-out", " Çıkış Yap")
+
+                        </li>
+
+                    }
+                </ul>
+
             </div>
             <!-- /.navbar-collapse -->
         </div>
@@ -71,21 +153,9 @@
 
     @RenderBody()
     <!-- /.container -->
-    <div class="container">
+    @RenderSection("footer", required: false)
 
-        <hr>
 
-        <!-- Footer -->
-        <footer>
-            <div class="row">
-                <div class="col-lg-12">
-                    <p>Copyright &copy; Your Website 2014</p>
-                </div>
-            </div>
-        </footer>
-
-    </div>
-    <!-- /.container -->
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
 

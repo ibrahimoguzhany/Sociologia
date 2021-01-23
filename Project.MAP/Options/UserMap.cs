@@ -15,9 +15,9 @@ namespace Project.MAP.Options
 
             Property(x => x.Name).HasMaxLength(25).HasColumnName("isim");
             Property(x => x.Surname).HasMaxLength(25).HasColumnName("Soyad");
-            Property(x => x.UserName).HasColumnName("Kullanici Adi").HasMaxLength(25);    
-            Property(x => x.Email).HasColumnName("E-Posta").HasMaxLength(70);    
-            Property(x => x.Password).HasColumnName("Sifre").HasMaxLength(25);
+            Property(x => x.UserName).HasColumnName("Kullanici Adi").HasMaxLength(25).IsRequired();    
+            Property(x => x.Email).HasColumnName("E-Posta").HasMaxLength(70).IsRequired();    
+            Property(x => x.Password).HasColumnName("Sifre").HasMaxLength(25).IsRequired();
             Property(x => x.IsActive).HasColumnName("Aktif");
             Property(x => x.IsAdmin).HasColumnName("Yonetici");
             Property(x => x.ActivateGuid).IsOptional();

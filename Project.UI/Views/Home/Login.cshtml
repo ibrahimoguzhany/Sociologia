@@ -1,0 +1,46 @@
+﻿@using Project.ENTITIES.ValueObjects
+@model LoginViewModel
+@{
+    ViewBag.Title = "Giriş Sayfası";
+}
+
+<link href="~/Content/login-register.css" rel="stylesheet" />
+<link href="~/Content/validation-summary.css" rel="stylesheet" />
+
+@*<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jqueryqq.min.js"></script>*@
+<!------ Include the above in your HEAD tag ---------->
+
+
+
+@using (Html.BeginForm())
+{
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+        <!-- Tabs Titles -->
+
+        <h2>Giriş Formu</h2>
+        <hr />
+        @Html.ValidationSummary(false)
+
+
+         @if(ViewBag.SetLink != null)
+        {
+            <a href="@ViewBag.SetLink" class="btn btn-primary">Activate</a>
+        }
+        <!-- Login Form -->
+        @Html.TextBoxFor(model => model.Username, new { @class = "fadeIn second", placeholder = "Kullanıcı Adınız" })
+        @Html.TextBoxFor(model => model.Password, new { @class = "fadeIn third", placeholder = "Şifreniz" })
+        <input type="submit" class="fadeIn fourth" value="Giriş">
+
+
+
+        <!-- Remind Passowrd -->
+        <div id="formFooter">
+            <a class="underlineHover" href="#">Şifrenizi mi unuttunuz?</a>
+        </div>
+
+    </div>
+</div>
+}

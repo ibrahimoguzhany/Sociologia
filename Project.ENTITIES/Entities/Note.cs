@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,13 +11,23 @@ namespace Project.ENTITIES.Entities
     public class Note:BaseEntity
     {
 
-        public string Title { get; set; }
-        public string Text { get; set; }
-        public bool IsDraft { get; set; }
-        public int LikeCount { get; set; }
-        public int CategoryID { get; set; }
-        public int UserID { get; set; }
 
+        [DisplayName("Not Başlığı"), Required,StringLength(60)]
+        public string Title { get; set; }
+
+        [DisplayName("Not Metni"), Required, StringLength(60)]
+        public string Text { get; set; }
+
+        [DisplayName("Taslak")]
+        public bool IsDraft { get; set; }
+
+        [DisplayName("Beğenilme")]
+        public int LikeCount { get; set; }
+
+        [DisplayName("Kategori ")]
+        public int CategoryID { get; set; }
+
+      
 
 
         //Relational Properties

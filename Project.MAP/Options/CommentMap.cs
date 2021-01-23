@@ -16,12 +16,9 @@ namespace Project.MAP.Options
             
             Property(x => x.Text).HasMaxLength(300).IsRequired();
 
-            Ignore(x => x.ID);
-            HasKey(x => new
-            {
-                x.UserID,
-                x.NoteID
-            });
+            
+
+            
 
             
 

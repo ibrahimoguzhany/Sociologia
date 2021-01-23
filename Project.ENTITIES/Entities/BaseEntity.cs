@@ -9,6 +9,7 @@ namespace Project.ENTITIES.Entities
 {
     public abstract class BaseEntity
     {
+        
         public int ID { get; set; }
         public string ModifiedUsername { get; set; }
 

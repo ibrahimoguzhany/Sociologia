@@ -1,0 +1,30 @@
+﻿ @using Project.ENTITIES.ValueObjects
+@model RegisterViewModel
+@{
+    ViewBag.Title = "Kayıt Sayfası";
+}
+
+<link href="~/Content/login-register.css" rel="stylesheet" />
+<link href="~/Content/validation-summary.css" rel="stylesheet" />
+
+
+
+
+
+@using (Html.BeginForm())
+{
+    <div class="wrapper fadeInDown">
+        <div id="formContent">
+            <!-- Tabs Titles -->
+
+            <h2>Kayıt Formu</h2>
+            <hr />
+            @Html.ValidationSummary(false)
+            @Html.TextBoxFor(model => model.Username, new { @class = "fadeIn second", placeholder = "Kullanıcı Adınız" })
+            @Html.TextBoxFor(model => model.EMail, new { @class = "fadeIn second", placeholder = "E-Posta Adresiniz" })
+            @Html.TextBoxFor(model => model.Password, new { @class = "fadeIn second", placeholder = "Şifreniz" })
+            @Html.TextBoxFor(model => model.RePassword, new { @class = "fadeIn third", placeholder = "Şifrenizi Tekrar Giriniz"})
+            <input type="submit" class="fadeIn fourth" value="Kayıt Ol">
+        </div>
+    </div>
+}

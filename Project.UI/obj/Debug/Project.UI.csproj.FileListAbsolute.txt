@@ -95,3 +95,12 @@ C:\Users\ibrah\Source\Repos\NoteProject\Project.UI\bin\Project.DAL.dll.config
 C:\Users\ibrah\Source\Repos\NoteProject\Project.UI\bin\FakeData.pdb
 C:\Users\ibrah\Source\Repos\NoteProject\Project.UI\bin\Project.MAP.pdb
 C:\Users\ibrah\Source\Repos\NoteProject\Project.UI\bin\Project.MAP.dll.config
+C:\Users\ibrah\Source\Repos\NoteProject\Project.UI\bin\Project.COMMON.dll
+C:\Users\ibrah\Source\Repos\NoteProject\Project.UI\bin\Project.COMMON.pdb
+C:\Users\ibrah\Source\Repos\NoteProject\Project.UI\bin\Project.CORE.dll
+C:\Users\ibrah\Source\Repos\NoteProject\Project.UI\bin\Project.CORE.pdb
+C:\Users\ibrah\Source\Repos\NoteProject\Project.UI\bin\Microsoft.Web.Helpers.dll
+C:\Users\ibrah\Source\Repos\NoteProject\Project.UI\bin\WebMatrix.Data.dll
+C:\Users\ibrah\Source\Repos\NoteProject\Project.UI\bin\WebMatrix.WebData.dll
+C:\Users\ibrah\Source\Repos\NoteProject\Project.UI\bin\WebMatrix.Data.xml
+C:\Users\ibrah\Source\Repos\NoteProject\Project.UI\bin\WebMatrix.WebData.xml

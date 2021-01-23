@@ -18,3 +18,9 @@ C:\Users\ibrah\Source\Repos\NoteProject\Project.DAL\bin\Debug\Project.MAP.dll.co
 C:\Users\ibrah\Source\Repos\NoteProject\Project.DAL\bin\Debug\Project.ENTITIES.dll.config
 C:\Users\ibrah\Source\Repos\NoteProject\Project.DAL\bin\Debug\FakeData.dll
 C:\Users\ibrah\Source\Repos\NoteProject\Project.DAL\bin\Debug\FakeData.pdb
+C:\Users\ibrah\Source\Repos\NoteProject\Project.DAL\bin\Debug\Project.COMMON.dll
+C:\Users\ibrah\Source\Repos\NoteProject\Project.DAL\bin\Debug\Project.COMMON.pdb
+C:\Users\ibrah\Source\Repos\NoteProject\Project.DAL\bin\Debug\Project.CORE.dll
+C:\Users\ibrah\Source\Repos\NoteProject\Project.DAL\bin\Debug\Project.CORE.pdb
+C:\Users\ibrah\Source\Repos\NoteProject\Project.DAL\obj\Debug\Project.DAL.Migrations.InitialCreate.resources
+C:\Users\ibrah\Source\Repos\NoteProject\Project.DAL\obj\Debug\Project.DAL.csproj.GenerateResource.cache

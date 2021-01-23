@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,15 +10,46 @@ namespace Project.ENTITIES.Entities
 {
     public class User : BaseEntity
     {
+        [DisplayName("İsim"), Required(ErrorMessage = "{0} alani gereklidir."),
+           StringLength(50, ErrorMessage = "{0} alani max.{1} karakter icermeli.")]
         public string Name { get; set; }
-        public string Surname { get; set; }
-        public string UserName { get; set; }
-        public string Email { get; set; }
-        public string Password { get; set; }
-        public string ProfileImageFileName { get; set; }
-        public bool? IsActive { get; set; }
-        public bool? IsAdmin{ get; set; }
 
+
+        [DisplayName("Soyisim"), Required(ErrorMessage = "{0} alani gereklidir."),
+        StringLength(50, ErrorMessage = "{0} alani max.{1} karakter icermeli.")]
+        public string Surname { get; set; }
+
+
+        [DisplayName("Kullanıcı Adı"), Required(ErrorMessage = "{0} alani gereklidir."),
+        StringLength(50, ErrorMessage = "{0} alani max.{1} karakter icermeli.")]
+        public string UserName { get; set; }
+
+
+        [DisplayName("Mail"), Required(ErrorMessage = "{0} alani gereklidir."),
+        StringLength(50, ErrorMessage = "{0} alani max.{1} karakter icermeli.")]
+        public string Email { get; set; }
+
+
+        [DisplayName("Şifre"), Required(ErrorMessage = "{0} alani gereklidir."),
+        StringLength(16, ErrorMessage = "{0} alani max.{1} karakter icermeli.")]
+        public string Password { get; set; }
+
+
+        [StringLength(30), ScaffoldColumn(false)]
+        public string ProfileImageFileName { get; set; }
+
+
+        [DisplayName("Aktif mi"), Required(ErrorMessage = "{0} alani gereklidir.")]
+        public bool? IsActive { get; set; }
+
+
+
+        [DisplayName("Admin mi"), Required(ErrorMessage = "{0} alani gereklidir.")]
+        public bool? IsAdmin { get; set; }
+
+
+
+        [ScaffoldColumn(false)]
         public Guid? ActivateGuid { get; set; }
 
 

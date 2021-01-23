@@ -54,8 +54,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DesignPatterns\GenericRepository\BaseRep\BaseRepository.cs" />
+    <Compile Include="DesignPatterns\GenericRepository\ConcRep\CategoryRepository.cs" />
+    <Compile Include="DesignPatterns\GenericRepository\ConcRep\CommentRepository.cs" />
+    <Compile Include="DesignPatterns\GenericRepository\ConcRep\LikesRepository.cs" />
+    <Compile Include="DesignPatterns\GenericRepository\ConcRep\NoteRepository.cs" />
+    <Compile Include="DesignPatterns\GenericRepository\ConcRep\UserRepository.cs" />
+    <Compile Include="DesignPatterns\GenericRepository\IntRep\IRepository.cs" />
     <Compile Include="DesignPatterns\SingletonPattern\DBTool.cs" />
     <Compile Include="EntityFramework\MyContext.cs" />
+    <Compile Include="Migrations\202101201630375_InitialCreate.cs" />
+    <Compile Include="Migrations\202101201630375_InitialCreate.designer.cs">
+      <DependentUpon>202101201630375_InitialCreate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MyInitializer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -65,9 +76,19 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Abstract\" />
+    <EmbeddedResource Include="Migrations\202101201630375_InitialCreate.resx">
+      <DependentUpon>202101201630375_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Project.COMMON\Project.COMMON.csproj">
+      <Project>{ad771009-f4c6-49f2-86b4-b8f1a6dae620}</Project>
+      <Name>Project.COMMON</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Project.CORE\Project.CORE.csproj">
+      <Project>{229a13de-7b63-4336-8d0f-bd2910753a6c}</Project>
+      <Name>Project.CORE</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Project.ENTITIES\Project.ENTITIES.csproj">
       <Project>{9f511025-484b-4b29-9f1b-79f55c8132da}</Project>
       <Name>Project.ENTITIES</Name>

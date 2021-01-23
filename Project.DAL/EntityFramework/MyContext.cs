@@ -22,9 +22,10 @@ namespace Project.DAL.EntityFramework
         {
             modelBuilder.Configurations.Add(new CategoryMap());
             modelBuilder.Configurations.Add(new CommentMap());
-            modelBuilder.Configurations.Add(new LikedMap());
+            //modelBuilder.Configurations.Add(new LikedMap());
             modelBuilder.Configurations.Add(new NoteMap());
             modelBuilder.Configurations.Add(new UserMap());
+           
         }
 
 

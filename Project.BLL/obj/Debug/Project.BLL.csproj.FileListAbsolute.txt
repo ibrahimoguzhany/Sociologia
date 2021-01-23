@@ -21,3 +21,7 @@ C:\Users\ibrah\Source\Repos\NoteProject\Project.BLL\bin\Debug\Project.MAP.dll.co
 C:\Users\ibrah\Source\Repos\NoteProject\Project.BLL\bin\Debug\Project.ENTITIES.dll.config
 C:\Users\ibrah\Source\Repos\NoteProject\Project.BLL\bin\Debug\FakeData.dll
 C:\Users\ibrah\Source\Repos\NoteProject\Project.BLL\bin\Debug\FakeData.pdb
+C:\Users\ibrah\Source\Repos\NoteProject\Project.BLL\bin\Debug\Project.COMMON.dll
+C:\Users\ibrah\Source\Repos\NoteProject\Project.BLL\bin\Debug\Project.COMMON.pdb
+C:\Users\ibrah\Source\Repos\NoteProject\Project.BLL\bin\Debug\Project.CORE.dll
+C:\Users\ibrah\Source\Repos\NoteProject\Project.BLL\bin\Debug\Project.CORE.pdb

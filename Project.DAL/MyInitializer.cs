@@ -23,14 +23,18 @@ namespace Project.DAL
                 IsActive = true,
                 IsAdmin = true,
                 UserName = "forthecoder",
+                ProfileImageFileName = "user.png",
                 Password = "123456",
                 CreatedDate = DateTime.Now,
                 ModifiedDate = DateTime.Now.AddMinutes(5),
                 ModifiedUsername = "ibrahimoguzhany"
             };
+            context.Users.Add(admin);
+
+
 
             //Adding standart user...
-            User standartuser = new User
+            User standartuser = new User()
             {
                 Name = "Ibrahim",
                 Surname = "YILMAZ",
@@ -39,11 +43,15 @@ namespace Project.DAL
                 IsActive = true,
                 IsAdmin = false,
                 UserName = "kozolak",
+                ProfileImageFileName = "user.png",
                 Password = "654321",
                 CreatedDate = DateTime.Now,
                 ModifiedDate = DateTime.Now.AddHours(1),
                 ModifiedUsername = "ibrahimoguzhany"
             };
+            context.Users.Add(standartuser);
+
+
             for (int i = 0; i < 8; i++)
             {
 
@@ -56,24 +64,24 @@ namespace Project.DAL
                     IsActive = true,
                     IsAdmin = false,
                     UserName = $"user{i}",
+                    ProfileImageFileName = "user.png",
                     Password = "123",
                     CreatedDate = FakeData.DateTimeData.GetDatetime(DateTime.Now.AddYears(-1), DateTime.Now),
                     ModifiedDate = FakeData.DateTimeData.GetDatetime(DateTime.Now.AddYears(-1), DateTime.Now),
                     ModifiedUsername = $"user{i}"
                 };
                 context.Users.Add(user);
+
             }
 
 
-            context.Users.Add(admin);
-            context.Users.Add(standartuser);
             context.SaveChanges();
 
 
             //Adding fake Categories
             for (int i = 0; i < 10; i++)
             {
-                Category cat = new Category
+                Category cat = new Category()
                 {
                     Title = FakeData.PlaceData.GetStreetName(),
                     Description = FakeData.PlaceData.GetAddress(),
@@ -83,10 +91,11 @@ namespace Project.DAL
 
                 context.Categories.Add(cat);
 
+
                 //Adding Notes
                 for (int k = 0; k < FakeData.NumberData.GetNumber(5, 9); k++)
                 {
-                    Note note = new Note
+                    Note note = new Note()
                     {
                         Title = FakeData.TextData.GetAlphabetical(FakeData.NumberData.GetNumber(5, 25)),
                         Text = FakeData.TextData.GetSentences(FakeData.NumberData.GetNumber(1, 3)),
@@ -101,11 +110,12 @@ namespace Project.DAL
 
                     cat.Notes.Add(note);
 
+
                     //Adding Comments
 
                     for (int j = 0; j < FakeData.NumberData.GetNumber(3, 5); j++)
                     {
-                        Comment comment = new Comment
+                        Comment comment = new Comment()
                         {
                             Text = FakeData.TextData.GetSentence(),
                             Note = note,
@@ -117,6 +127,7 @@ namespace Project.DAL
 
                         note.Comments.Add(comment);
 
+
                     }
 
                     //Adding Fake Likes
@@ -125,17 +136,18 @@ namespace Project.DAL
 
                     for (int m = 0; m < note.LikeCount; m++)
                     {
-                        Liked liked = new Liked
+                        Liked liked = new Liked()
                         {
                             LikedUser = userList[m],
                         };
                         note.Likes.Add(liked);
                     }
+                    context.SaveChanges();
+
 
                 }
             }
-
-            context.SaveChanges();
+                context.SaveChanges();
         }
     }
 }

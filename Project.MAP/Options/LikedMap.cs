@@ -14,13 +14,8 @@ namespace Project.MAP.Options
         {
             ToTable("Likes");
 
-
-            Ignore(x => x.ID);
-            HasKey(x => new
-            {
-                x.NoteID,
-                x.UserID
-            });
         }
+
+        
     }
 }

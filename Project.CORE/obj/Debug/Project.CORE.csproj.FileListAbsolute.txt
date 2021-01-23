@@ -1,0 +1,6 @@
+C:\Users\ibrah\Source\Repos\NoteProject\Project.CORE\bin\Debug\Project.CORE.dll
+C:\Users\ibrah\Source\Repos\NoteProject\Project.CORE\bin\Debug\Project.CORE.pdb
+C:\Users\ibrah\Source\Repos\NoteProject\Project.CORE\obj\Debug\Project.CORE.csprojAssemblyReference.cache
+C:\Users\ibrah\Source\Repos\NoteProject\Project.CORE\obj\Debug\Project.CORE.csproj.CoreCompileInputs.cache
+C:\Users\ibrah\Source\Repos\NoteProject\Project.CORE\obj\Debug\Project.CORE.dll
+C:\Users\ibrah\Source\Repos\NoteProject\Project.CORE\obj\Debug\Project.CORE.pdb

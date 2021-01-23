@@ -10,8 +10,9 @@ namespace Project.ENTITIES.Entities
     {
 
         public string Text { get; set; }
-        public int NoteID { get; set; }
-        public int UserID { get; set; }
+
+
+       
 
 
         //Relational Properties
